@@ -21,8 +21,11 @@
 
 
   MVVM keeps everything organized:
+  
   ViewModel → handles state and logic
+  
   Repository → fetches data
+  
   View → just shows what ViewModel provides
 
 
