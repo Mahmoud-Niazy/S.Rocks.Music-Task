@@ -1,3 +1,6 @@
+- Screen Recording Path : assignment_screen_recording/screen recording.mp4
+
+
 - Structure: MVVM
 
   each feature/
