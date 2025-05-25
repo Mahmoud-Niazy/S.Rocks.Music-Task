@@ -17,49 +17,51 @@ class HomeView extends StatelessWidget {
       body: ChangeNotifierProvider.value(
         value: diInstance<HomeProvider>()..getAllServices(),
         child: SingleChildScrollView(
-          child: Column(
-            children: [
-              BookNowItem(),
-              SizedBox(height: 15),
-              Text(
-                'Hire hand-picked Pros for popular music services',
-                style: AppStyles.style13,
-              ),
-              Consumer<HomeProvider>(
-                builder: (context, provider, child) {
-                  if (provider.services.isEmpty) {
-                    return Center(child: CircularProgressIndicator());
-                  }
-                  if (provider.isError) {
-                    return Center(child: Text('Error'));
-                  }
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 15,
-                      vertical: 0,
-                    ),
-                    child: ListView.separated(
-                      physics: NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      itemBuilder: (context, index) {
-                        return ServiceItem(
-                          serviceModel: provider.services[index],
-                          onTab: (){
-                            navigate(context: context, screen: ServiceDetailsView(
-                              title: 'You tapped on:${provider.services[index].title}',
-                            ));
-                          },
-                        );
-                      },
-                      separatorBuilder: (context, index) {
-                        return SizedBox(height: 10);
-                      },
-                      itemCount: provider.services.length,
-                    ),
-                  );
-                },
-              ),
-            ],
+          child: SafeArea(
+            child: Column(
+              children: [
+                BookNowItem(),
+                SizedBox(height: 15),
+                Text(
+                  'Hire hand-picked Pros for popular music services',
+                  style: AppStyles.style13,
+                ),
+                Consumer<HomeProvider>(
+                  builder: (context, provider, child) {
+                    if (provider.services.isEmpty) {
+                      return Center(child: CircularProgressIndicator());
+                    }
+                    if (provider.isError) {
+                      return Center(child: Text('Error'));
+                    }
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 15,
+                        vertical: 0,
+                      ),
+                      child: ListView.separated(
+                        physics: NeverScrollableScrollPhysics(),
+                        shrinkWrap: true,
+                        itemBuilder: (context, index) {
+                          return ServiceItem(
+                            serviceModel: provider.services[index],
+                            onTab: (){
+                              navigate(context: context, screen: ServiceDetailsView(
+                                title: 'You tapped on:${provider.services[index].title}',
+                              ));
+                            },
+                          );
+                        },
+                        separatorBuilder: (context, index) {
+                          return SizedBox(height: 10);
+                        },
+                        itemCount: provider.services.length,
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),
