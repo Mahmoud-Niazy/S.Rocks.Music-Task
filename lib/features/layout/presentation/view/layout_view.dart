@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:s_rocks_music_task/features/home/presentation/view_model/home_provider/home_provider.dart';
+import 'package:s_rocks_music_task/features/layout/presentation/view/widgets/half_circle_item.dart';
 import '../../../../core/utils/app_assets.dart';
 import 'package:provider/provider.dart';
 import '../../../../core/dependency_injection/dependency_injection_manager.dart';
@@ -35,19 +36,39 @@ class LayoutView extends StatelessWidget {
               },
               items: [
                 BottomNavigationBarItem(
-                  icon: Image(image: AssetImage(AppAssets.home)),
+                  icon: Column(
+                    children: [
+                      HalfCircleItem(isSelected: provider.currentIndex == 0),
+                      Image(image: AssetImage(AppAssets.home)),
+                    ],
+                  ),
                   label: 'Home',
                 ),
                 BottomNavigationBarItem(
-                  icon: Image(image: AssetImage(AppAssets.news)),
+                  icon: Column(
+                    children: [
+                      HalfCircleItem(isSelected: provider.currentIndex == 1),
+                      Image(image: AssetImage(AppAssets.news)),
+                    ],
+                  ),
                   label: 'News',
                 ),
                 BottomNavigationBarItem(
-                  icon: Image(image: AssetImage(AppAssets.trackBox)),
+                  icon: Column(
+                    children: [
+                      HalfCircleItem(isSelected: provider.currentIndex == 2),
+                      Image(image: AssetImage(AppAssets.trackBox)),
+                    ],
+                  ),
                   label: 'TrackBox',
                 ),
                 BottomNavigationBarItem(
-                  icon: Image(image: AssetImage(AppAssets.projects)),
+                  icon: Column(
+                    children: [
+                      HalfCircleItem(isSelected: provider.currentIndex == 3),
+                      Image(image: AssetImage(AppAssets.projects)),
+                    ],
+                  ),
                   label: 'Projects',
                 ),
               ],
@@ -58,3 +79,5 @@ class LayoutView extends StatelessWidget {
     );
   }
 }
+
+
