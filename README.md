@@ -3,18 +3,28 @@
   each feature/
 
 ├── data/             
+
 │   └── repositories/
+
 │   └── models/
 
 
+
 ├── domain/            
+
 │   └── use cases/
+
 │   └── repositories/
 
 
-├── presentation/      
+
+├── presentation/     
+
 │   └── view models/
+
 │   └── views/
+
+
 
 
   MVVM keeps everything organized:
