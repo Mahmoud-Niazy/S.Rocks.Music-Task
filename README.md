@@ -1,10 +1,10 @@
 - Structure: MVVM
 
   each feature/
-  
-  ├── data/             
-  │   └── repositories/
-  │   └── models/
+
+├── data/             
+│   └── repositories/
+│   └── models/
 
 
 ├── domain/            
