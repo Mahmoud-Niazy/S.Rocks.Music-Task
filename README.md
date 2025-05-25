@@ -3,27 +3,20 @@
   each feature/
 
 ├── data/             
-
 │   └── repositories/
-
 │   └── models/
 
 
 
 ├── domain/            
-
 │   └── use cases/
-
 │   └── repositories/
 
 
 
 ├── presentation/     
-
 │   └── view models/
-
 │   └── views/
-
 
 
 
